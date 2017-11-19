@@ -37,7 +37,7 @@ colnames(hact) <- c("subject", features[, 2], "activity")
 #--------------------------------------------------------------------
 # Extract only the measurements on the mean and standard deviation for each measurement
 colstk <- grepl("subject|activity|mean|std", colnames(hact))
-hact <- hact[, coltk]
+hact <- hact[, colstk]
 
 #--------------------------------------------------------------------
 # Use descriptive activity names to name the activities in the data set
