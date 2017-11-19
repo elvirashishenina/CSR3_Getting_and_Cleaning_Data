@@ -53,8 +53,8 @@ hactcols <- gsub("Acc", "Accelerometer", hactcols)
 hactcols <- gsub("Gyro", "Gyroscope", hactcols)
 hactcols <- gsub("Mag", "Magnitude", hactcols)
 hactcols <- gsub("Freq", "Frequency", hactcols)
-hactcols <- gsub("Mean", "Mean", hactcols)
-hactcols <- gsub("Std", "StandardDeviation", hactcols)
+hactcols <- gsub("mean", "Mean", hactcols)
+hactcols <- gsub("std", "StandardDeviation", hactcols)
 hactcols <- gsub("BodyBody", "Body", hactcols)
 colnames(hact) <- hactcols
 
@@ -62,7 +62,7 @@ colnames(hact) <- hactcols
 # Create a second, independent tidy set with the average of each variable for each activity and each subject
 hactmeans <- hact %>% 
 group_by(subject, activity) %>%
-summarise_each(funs(Mean))
+summarise_each(funs(mean))
 
 #--------------------------------------------------------------------
 # Write the data set to the tidy_data.txt file
